@@ -74,13 +74,13 @@ impl PPMReader {
                 0x0A => {
                     if reading_comment {
                         let mut comment_str = String::from_utf8_lossy(&temp_buffer).to_string();
-                        println!("{:?}", &comment_str);
+                        //println!("{:?}", &comment_str);
                         &comments.push(String::from(&comment_str));
                         reading_comment = false;
                         &temp_buffer.clear();
                     } else if reading_metadata {
                         let mut metadata_str = String::from_utf8_lossy(&temp_buffer).to_string();
-                        println!("{:?}", &metadata_str);
+                        //println!("{:?}", &metadata_str);
                         &metadata.push(String::from(&metadata_str));
                         metadata_lines_read += 1;
                     }
